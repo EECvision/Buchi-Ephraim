@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardContainer {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateX(-100%);
+  transition: transform 1650ms;
+}

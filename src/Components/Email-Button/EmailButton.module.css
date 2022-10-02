@@ -1,0 +1,51 @@
+.container {
+  overflow: hidden;
+  width: max-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 2em;
+  background: #00D1FF;
+}
+
+.container:hover .clipboard {
+  transform: translateY(0);
+}
+
+.email {
+  padding: 0.25em 1em;
+  border-radius: 2em;
+  font-weight: 700;
+  background: #00D1FF;
+  color: #0C0C0C;
+}
+
+.clipboard {
+  width: calc(100% - 0.5em);
+  height: calc(100% - 0.5em);
+  position: absolute;
+  bottom: 0.25em;
+  left: 0.25em;
+  font-weight: 600;
+  color: black;
+  transition: transform 250ms;
+  text-align: center;
+  background: #00D1FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: all 300ms;
+  border-radius: 2em;
+  color: #FFFFFF;
+  box-shadow: 0 0 4px#00b6de;
+}
+
+@media screen and (max-width: 520px) {
+  .email {
+    font-size: 0.8rem;
+  }
+}

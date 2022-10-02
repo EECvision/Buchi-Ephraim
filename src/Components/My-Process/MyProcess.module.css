@@ -1,0 +1,146 @@
+.myProcessWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: calc(6px * 16);
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'PT Serif', serif;
+  white-space: nowrap;
+  color: #FFFFFF;
+  margin-bottom: 1em;
+}
+
+.processContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+
+.process {
+  width: 100%;
+  position: sticky;
+  border-radius: 4em;
+  background: #2F2F36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4em;
+  padding: 4em 6em;
+}
+
+.icon svg {
+  width: 24vw;
+  max-width: 24vw;
+  height: 24vw;
+  max-height: 24vw;
+}
+
+.RHS {
+  color: #FFFFFF;
+}
+
+.idAndTitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  line-height: 6em;
+  margin-bottom: 2em;
+}
+
+.id {
+  font-size: 8rem;
+  font-weight: bold;
+  font-family: 'PT Serif', serif;
+}
+
+.title_ {
+  font-family: 'PT Serif', serif;
+  font-size: 2rem;
+}
+
+.description {
+  font-size: 1.4rem;
+  line-height: 2em;
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .process {
+    padding: 4em;
+    border-radius: 3em;
+    gap: 3em;
+  }
+
+  .idAndTitle {
+    margin-bottom: 1em;
+  }
+
+  .id {
+    font-size: 6rem;
+  }
+
+  .title_ {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .process {
+    padding: 3em;
+    position: static;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .process {
+    flex-direction: column;
+    transform: scale(1) !important;
+    padding: 2em;
+    border-radius: 2em;
+    gap: 1em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .idAndTitle {
+    margin-bottom: 0.5em;
+  }
+
+  .id {
+    font-size: 4rem;
+  }
+
+  .title_ {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

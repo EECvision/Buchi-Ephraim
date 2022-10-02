@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: max-content;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 2.5vw;
+  transform: translateY(100%);
+  color: #FFFFFF;
+}
+
+.text.hide {
+  animation: slide-out 1250ms forwards;
+}
+
+.text.slide {
+  animation: slide-in 1250ms forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}

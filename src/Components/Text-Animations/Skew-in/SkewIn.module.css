@@ -1,0 +1,42 @@
+.container {
+  width: 16em;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 1.5rem;
+  line-height: 2em;
+  transform: translateY(100%) rotate(15deg);
+  transform-origin: top left;
+  white-space: nowrap;
+  font-family: sans-serif;
+  color: #FFFFFF;
+}
+
+.text.hide {
+  animation: slide-out 1250ms forwards;
+}
+
+.text.slide {
+  animation: slide-in 1250ms forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%) rotate(15deg);
+  }
+
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}

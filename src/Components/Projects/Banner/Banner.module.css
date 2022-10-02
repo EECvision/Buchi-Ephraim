@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  flex: 0 0 auto;
+  background: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+  padding: 0 2em;
+}
+
+.bg_,
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: transform 650ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg_ {
+  transform: translateX(0);
+}
+
+.bg.center {
+  transform: translateX(0);
+}
+
+.bg.hold {
+  transform: translateX(0);
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  transform: translateY(-100px);
+  transition: transform 650ms;
+  padding-left: 1em;
+  font-size: calc(2rem + 7vw);
+  font-weight: 900;
+  font-family: serif;
+  color: #FFFFFF;
+}
+
+.title.center {
+  transform: translateY(0);
+}
+
+.card {
+  width: 100%;
+  max-width: 48vw;
+  position: absolute;
+  transform: rotateY(-30deg) translateX(260px) translateY(0);
+  transition: transform 650ms;
+}
+
+.card.center {
+  transform: rotateY(0deg) translateX(0px);
+}
+
+.arrowDown {
+  position: fixed;
+  bottom: 2em;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid white;
+  height: 3em;
+  width: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+
+.arrowDown .arrow {
+  width: 1.4em;
+  transform: rotate(270deg);
+  stroke: white;
+  animation: bounce 650ms infinite alternate;
+}
+
+.arrowDown:hover .arrow {
+  animation-play-state: paused;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0) rotate(270deg);
+  }
+
+  to {
+    transform: translateY(4px) rotate(270deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .fixed {
+    flex-direction: column;
+  }
+
+  .card {
+    position: static;
+    max-width: 36em;
+    margin-bottom: 2em;
+  }
+
+  .title {
+    position: static;
+    text-align: center;
+    padding: 0;
+  }
+}

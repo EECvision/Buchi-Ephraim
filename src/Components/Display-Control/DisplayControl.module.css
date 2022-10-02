@@ -1,0 +1,42 @@
+.wrapper {
+  width: max-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transition: right 300ms;
+}
+
+.tab {
+  width: 4em;
+  height: 12px;
+  border-radius: 16px;
+  background: #D9D9D9;
+  transition: all 300ms;
+}
+
+.tab.grow {
+  height: 32px;
+}
+
+@media screen and (max-width: 1320px) {
+  .wrapper {
+    right: 2em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tab {
+    width: 3em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tab {
+    width: 3em;
+  }
+}

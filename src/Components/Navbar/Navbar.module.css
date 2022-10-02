@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+  padding: 0 2em;
+  border-bottom: 1px solid gainsboro;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+}
+
+.logo {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.link,
+.name {
+  color: #3B4A4F;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    padding: 0 1em;
+  }
+}

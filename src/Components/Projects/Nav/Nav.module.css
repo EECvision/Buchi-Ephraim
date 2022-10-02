@@ -1,0 +1,97 @@
+
+.container {
+  width: auto;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  background: transparent;
+}
+
+.backToTop,
+.navItem {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  border: 1px solid gainsboro;
+  border-radius: 0.25em;
+  padding: 0.26em 0.6em;
+  cursor: pointer;
+}
+
+.navItem.active {
+  background: gainsboro;
+}
+
+.backToTop {
+  cursor: pointer;
+}
+
+.routeBtn {
+  width: 100%;
+  position: absolute;
+  bottom: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 0.5em;
+}
+
+.routeBtn.out {
+  visibility: hidden;
+  width: auto;
+  position: fixed;
+  right: 4em;
+}
+
+.next, .prev {
+  width: 7em;
+  cursor: pointer;
+  border: 1px solid gainsboro;
+  text-align: center;
+  border-radius: 0.25em;
+  padding: 0.26em 1em;
+}
+
+.routeBtn.out .prev,
+.routeBtn.out .next {
+  font-size: 1rem;
+  padding: 0.26em 1em;
+}
+
+.prev,.next,.backToTop, .navItem {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    right: 2em;
+  }
+
+  .prev,.next,.backToTop, .navItem {
+    font-size: 0.75rem;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    font-size: 0.75rem;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .routeBtn.out {
+    visibility: visible;
+  }
+
+}

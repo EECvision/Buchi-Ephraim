@@ -1,0 +1,173 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em 4em;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  margin-bottom: 6em;
+  color: #FFFFFF;
+}
+
+.fTop {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.fLeft {
+  max-width: 24em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2em;
+}
+
+.fLeftHeading {
+  font-family: serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  background: #232934;
+  cursor: pointer;
+}
+
+.link:hover svg {
+  animation: dance 850ms forwards;
+}
+
+@keyframes dance {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  40% {
+    transform: translateY(4px) scale(1);
+  }
+
+  80% {
+    transform: translateY(-4px) scale(1);
+  }
+
+  100% {
+    transform: translateY(0) scale(1.1);
+  }
+}
+
+.link>svg {
+  fill: white;
+}
+
+.contactAndResumeWrapper .link {
+  width: 2em;
+  height: 2em;
+}
+
+.fBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.code svg {
+  width: 1em;
+  height: 1em;
+  transform: translateY(3px);
+}
+
+.end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 0.95rem;
+}
+
+.base {
+  text-align: right;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    padding: 1em 2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-bottom: 4em;
+  }
+
+  .fTop {
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+  }
+
+  .fRight,
+  .fLeft {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .footer {
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+
+  .code {
+    font-size: 1.2rem;
+  }
+
+  .link {
+    width: 3em;
+    height: 3em;
+  }
+
+  .email {
+    font-size: 0.85em;
+    padding: 0.5em 1em;
+  }
+}

@@ -1,0 +1,106 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 10em;
+  height: 24em;
+  cursor: pointer;
+  position: relative;
+  transition: width 1250ms;
+  border: 1px solid #DCE0E3;
+  filter: drop-shadow(26px 18px 18px rgba(93, 134, 194, 0.1));
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 650ms;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card.active {
+  width: 58em;
+}
+
+.backBtn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 245, 245, 0.834);
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  text-align: center;
+  right: -2em;
+  cursor: pointer;
+  visibility: hidden;
+  transition: all 650ms;
+  opacity: 0;
+  z-index: 8;
+}
+
+.backBtn.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.caretLeft {
+  transition: transform 300ms;
+}
+
+.backBtn:hover>.caretLeft {
+  transform: translateX(-25%);
+}
+
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: 6em;
+  }
+
+  .card.active {
+    width: 42em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 4em;
+  }
+
+  .card.active {
+    width: 28em;
+  }
+}
+
+@media screen and (max-width: 519px) {
+
+  .card {
+    width: 2em;
+    height: 16em;
+  }
+
+  .card.active {
+    width: 18em;
+  }
+
+  .backBtn {
+    display: none;
+  }
+}
