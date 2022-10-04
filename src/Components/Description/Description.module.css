@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 4px;
   width: 150px;
   height: 36px;
   border-radius: 3em;
@@ -47,7 +48,7 @@
   padding-left: 0.75em;
   border: 1px solid #0B1C3F;
   cursor: pointer;
-  margin-bottom: 0.25em;
+  /* margin-bottom: 0.25em; */
 }
 
 .linkRound {
@@ -59,6 +60,7 @@
   font-weight: 600;
   font-size: 1rem;
   color: #0B1C3F;
+  margin-top: -4px;
 }
 
 .link:hover {
@@ -93,18 +95,19 @@
 
 @media screen and (max-width: 520px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .linkRound {
+    width: 1em;
   }
 
   .link .text {
-    display: none;
+    font-size: 0.9rem;
   }
 
   .link {
+    height: 32px;
     width: auto;
-    height: auto;
-    padding: 0;
-    border: none;
-    transform: translateY(5px);
   }
 }

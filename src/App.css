@@ -1,5 +1,5 @@
 .App {
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -16,19 +16,27 @@
   /* border-radius: 5px; */
   background: #F1F1F1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #C1C1C1; 
+  background: #C1C1C1;
   /* border-radius: 5px; */
 }
 
 ::-webkit-scrollbar-corner {
-  background: #F1F1F1; 
+  background: #F1F1F1;
   /* border-radius: 5px; */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b4b4b4; 
+  background: #b4b4b4;
+}
+
+@media screen and (max-width: 520px) {
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }

@@ -31,7 +31,10 @@ const Project = ({ animate }) => {
     projectContents: {},
   })
   const { center, projectContents, contentId, activeNav, scrolled } = state
-  const aboutPathId = window.localStorage.aboutPath.split("/")[2]
+  let aboutPathId = ""
+  if (window.localStorage.aboutPath) {
+    aboutPathId = window.localStorage.aboutPath.split("/")[2]
+  }
   const { title, bannerBg } = data[mapProjectToId[params.id || aboutPathId]]
   const navs = ["Nav1", "Nav2", "Nav3", "Nav4", "Nav5", "Nav6"]
 

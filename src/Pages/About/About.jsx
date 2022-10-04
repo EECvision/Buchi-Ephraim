@@ -15,6 +15,7 @@ import { AppContext } from "../../state/app.context"
 import { useLocation, useNavigate } from "react-router-dom"
 import { setAboutPage } from "../../state/app.actions"
 import CoreValues from "../../Components/Core-Values/CoreValues"
+import Reviews from "../../Components/Reviews/Reviews"
 
 const About = () => {
   const processContainerRef = useRef(null)
@@ -127,42 +128,48 @@ const About = () => {
         </section>
         <section ref={fadeRef} className={classes.content}>
           <div className={classes.contentWrapper}>
-            <SkewIn offset={-500} props={{ ...aboutContents, top: "slideTop" }}>
-              What I can <br />
-              do for you{" "}
-            </SkewIn>
-            <div className={classes.textWrapper}>
-              <SlideIn
-                data={slide3}
-                offset={-500}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-              <SlideIn
-                data={slide4}
-                offset={-900}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-            </div>
-          </div>
-          <div className={classes.contentWrapper_mobile}>
             <SkewIn offset={-200} props={{ ...aboutContents, top: "slideTop" }}>
               What I can <br />
               do for you{" "}
             </SkewIn>
             <div className={classes.textWrapper}>
-              <FadeIn
+              <SlideIn
                 data={slide3}
-                offset={-400}
+                offset={-200}
                 props={{ ...aboutContents, top: "slideTop" }}
               />
-              <FadeIn
+              <SlideIn
                 data={slide4}
                 offset={-600}
                 props={{ ...aboutContents, top: "slideTop" }}
               />
             </div>
           </div>
+          <div className={classes.contentWrapper_mobile}>
+            <SkewIn offset={0} props={{ ...aboutContents, top: "slideTop" }}>
+              What I can <br />
+              do for you{" "}
+            </SkewIn>
+            <div className={classes.textWrapper}>
+              <FadeIn
+                data={slide3}
+                offset={-200}
+                props={{ ...aboutContents, top: "slideTop" }}
+              />
+              <FadeIn
+                data={slide4}
+                offset={-400}
+                props={{ ...aboutContents, top: "slideTop" }}
+              />
+            </div>
+          </div>
         </section>
+        {/* <section className={classes.reviews}>
+          <Reviews
+            offset={-1200}
+            props={{ ...aboutContents, top: "slideTop" }}
+          />
+        </section> */}
         <section ref={processRef} className={classes.myProcess}>
           <MyProcess props={aboutContents} />
         </section>

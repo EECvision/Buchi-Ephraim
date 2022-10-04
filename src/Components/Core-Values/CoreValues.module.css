@@ -1,8 +1,9 @@
 .carouselWrapper {
   width: 100%;
+  margin: 0 auto;
   overflow: hidden;
   border: 1px solid black;
-  margin-bottom: 8em;
+  border: none;
   border-top: 2px solid gray;
   border-bottom: 2px solid gray;
 }

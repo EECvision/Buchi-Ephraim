@@ -22,7 +22,7 @@ export const handleScroll = ({
   domMountRef,
 }) => {
   if (domMountRef.current < 10) return (domMountRef.current += 1) // debounce
-  const projectContent = document.getElementById("projectContent").children
+  const projectContent = document.getElementById("projectContent")?.children
   let container = document.documentElement
   let scrollHeight = container.scrollTop
   let clientHeight = container.clientHeight

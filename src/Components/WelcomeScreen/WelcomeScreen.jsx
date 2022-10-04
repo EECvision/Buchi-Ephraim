@@ -54,11 +54,11 @@ const WelcomeScreen = () => {
           <div className={classes.greeting}>{greetings[count]}</div>
           <div className={classes.quote}>
             “Your product, your use case, and the space you occupy in people’s
-            minds is unique, don’t fall into the trap of emulation”
+            <br /> minds is unique, don’t fall into the trap of emulation”
           </div>
           <div className={classes.author}>~ Jesse Weaver ~</div>
         </div>
-        <DesignFlow className={classes.flow} />
+        {/* <DesignFlow className={classes.flow} /> */}
       </div>
     </div>
   )

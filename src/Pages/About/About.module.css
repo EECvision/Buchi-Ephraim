@@ -103,6 +103,7 @@
   margin-bottom: calc(6px * 16);
 }
 
+.reviews,
 .myProcess,
 .content {
   width: 100%;
@@ -115,7 +116,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 6em;
-  margin-bottom: calc(6px * 16);
+  margin-bottom: calc(6 * 16px);
 }
 
 .contentWrapper_mobile {
@@ -160,6 +161,7 @@
 
 @media screen and (max-width: 1200px) {
 
+  .reviews,
   .content,
   .myProcess {
     padding: 0 2em;
@@ -179,8 +181,10 @@
   .contentWrapper_mobile,
   .contentWrapper {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     display: none;
+    gap: 2em;
+    margin-bottom: calc(4 * 16px);
   }
 
   .contentWrapper_mobile {
@@ -207,10 +211,20 @@
   .greeting .title {
     margin-bottom: calc(4 * 16px);
   }
+
+  .coreValues {
+    margin-bottom: calc(4 * 16px);
+  }
 }
 
 @media screen and (max-width: 520px) {
 
+  .contentWrapper_mobile,
+  .contentWrapper {
+    margin-bottom: calc(2 * 16px);
+  }
+
+  .reviews,
   .content,
   .myProcess {
     padding: 1em;
@@ -235,6 +249,10 @@
 
   .greeting .title {
     font-size: 7vw;
+    margin-bottom: calc(2 * 16px);
+  }
+
+  .coreValues {
     margin-bottom: calc(2 * 16px);
   }
 }

@@ -15,11 +15,11 @@
 }
 
 .text.hide {
-  animation: slide-out 1250ms forwards;
+  animation: slide-out 1850ms forwards;
 }
 
 .text.slide {
-  animation: slide-in 1250ms forwards;
+  animation: slide-in 1850ms forwards;
 }
 
 @keyframes slide-in {

@@ -10,8 +10,7 @@ const CoreValues = () => {
       </div>
       <div>Friendly,</div>
       <div>Collaborative,</div>
-      <div>Natural,</div>
-      <div>Curiosity,</div>
+      <div>Natural curiosity,</div>
       <div>Good communicator,</div>
       <div>Always learning,</div>
     </>

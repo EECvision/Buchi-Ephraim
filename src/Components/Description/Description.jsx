@@ -30,12 +30,7 @@ const Description = ({ hold }) => {
       </div>
       <div className={classes.description}>{data[inview].description}</div>
       <Link to={data[inview].caseStudy} className={classes.caseStudy}>
-        <div
-          style={{ borderColor: data[inview].mainColor }}
-          className={classes.text}
-        >
-          Open case study
-        </div>
+        <div className={classes.text}>Open case study</div>
         <LinkIcon
           style={{ stroke: data[inview].mainColor }}
           className={classes.linkIcon}
