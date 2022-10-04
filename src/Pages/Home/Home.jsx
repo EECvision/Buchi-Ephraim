@@ -49,9 +49,9 @@ const Home = ({ animate }) => {
     const numId = mapIdToDisplayOut[inview]
     const len = Object.keys(data).length
     if (move && start) {
-      if (start <= 40 && numId > 1) {
+      if (start <= 72 && numId > 1) {
         dispatch(setInview(mapProjectToId[numId - 1]))
-      } else if (start >= windowWidth - 40 && numId < len) {
+      } else if (start >= windowWidth - 72 && numId < len) {
         dispatch(setInview(mapProjectToId[numId + 1]))
       }
       handleSetState({ start: 0, move: false, end: false })
