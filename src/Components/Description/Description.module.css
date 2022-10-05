@@ -61,6 +61,7 @@
   font-size: 1rem;
   color: #0B1C3F;
   margin-top: -4px;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -109,5 +110,21 @@
   .link {
     height: 32px;
     width: auto;
+  }
+
+  .about.reset {
+    animation: enter 1850ms forwards;
+  }
+
+  @keyframes enter {
+    from {
+      transform: translateX(-10%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
