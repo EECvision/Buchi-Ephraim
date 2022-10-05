@@ -1,17 +1,24 @@
 import React, { useEffect } from "react"
 import classes from "./Reviews.module.css"
 import { REVIEWS } from "./Reviews.script"
+import { ReactComponent as QuoteUp } from "../../assets/quote-up.svg"
+import { ReactComponent as QuoteDown } from "../../assets/quote-down.svg"
 
-const Reviews = ({ offset, props }) => {
-  const { top, clientHeight } = props
+const Reviews = ({ props }) => {
   useEffect(() => {
     const cards = document.getElementsByClassName("review-card")
-    const cardOffset = 600
+    const offSet = 100
     for (let i = 0; i < cards.length; i++) {
-      let offsetT = -Math.abs(Math.abs(offset) + i * cardOffset)
-      if (props[top] <= 0 + offsetT) {
-        cards[i].children[0].style.transform = "translateX(0)"
-      } else if (props[top] - offset - cardOffset > 0) {
+      const cardTop = cards[i].getBoundingClientRect().top
+      if (cardTop + offSet <= window.innerHeight) {
+        cards[i].children[0].style.opacity = "1"
+        if (i % 2 === 0) {
+          cards[i].children[0].style.transform = "translateX(2em)"
+        } else {
+          cards[i].children[0].style.transform = "translateX(-2em)"
+        }
+      } else {
+        cards[i].children[0].style.opacity = "0"
         if (i % 2 === 0) {
           cards[i].children[0].style.transform = "translateX(-6em)"
         } else {
@@ -19,7 +26,7 @@ const Reviews = ({ offset, props }) => {
         }
       }
     }
-  }, [props, top, clientHeight, offset])
+  }, [props])
 
   return (
     <div className={classes.container}>
@@ -27,9 +34,16 @@ const Reviews = ({ offset, props }) => {
         See what colleagues are saying about me
       </div>
       <div className={classes.wrapper}>
-        {REVIEWS.map((r, idx) => (
+        {REVIEWS.map(({ review, reviewer }, idx) => (
           <div key={idx} className={`${classes.reviewContainer} review-card`}>
-            <div className={classes.content}></div>
+            <div className={classes.content}>
+              <div className={classes.review}>
+                <QuoteUp className={classes.quoteUp} />
+                {review}
+                <QuoteDown className={classes.quoteDown} />
+              </div>
+              <div className={classes.reviewer}>{reviewer}</div>
+            </div>
           </div>
         ))}
       </div>

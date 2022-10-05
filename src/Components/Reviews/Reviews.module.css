@@ -1,12 +1,10 @@
 .container {
-  border: 1px solid red;
   width: 100%;
+  margin-bottom: 8em;
   overflow: hidden;
-  margin-bottom: 6em;
 }
 
 .wrapper {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -16,30 +14,52 @@
 
 .title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'PT Serif', serif;
-  white-space: nowrap;
   color: #FFFFFF;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .reviewContainer {
-  border: 1px solid red;
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  height: 32em;
 }
 
 .content {
   width: 100%;
-  max-width: 50%;
-  border: 1px solid red;
-  height: 100%;
-  background: blue;
-  transition: transform 650ms;
+  max-width: calc(45% - 2em);
+  background: transparent;
+  transition: all 1250ms;
+  color: #FFFFFF;
+}
+
+.quoteUp,
+.quoteDown {
+  width: 1em;
+}
+
+.quoteUp {
+  position: absolute;
+  transform: translate(-100%, -100%);
+}
+
+.quoteDown {
+  position: relative;
+  bottom: -1em;
+}
+
+.review {
+  font-size: 1.4rem;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+
+.reviewer {
+  font-size: 2rem;
+  font-family: 'PT Serif', serif;
 }
 
 .reviewContainer:nth-child(2) .content {
@@ -52,12 +72,34 @@
   }
 
   .content {
-    max-width: 100%;
+    max-width: calc(100% - 4em);
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 520px) {
   .container {
     margin-bottom: 2em;
+  }
+
+  .content {
+    transition: all 1850ms;
+  }
+
+  .review {
+    font-size: 1.2rem;
+    line-height: 2.4em;
+  }
+
+  .reviewer {
+    font-size: 1.4rem;
+  }
+
+  .quoteUp,
+  .quoteDown {
+    width: 0.8em;
+  }
+
+  .title {
+    font-size: 1.6rem;
   }
 }

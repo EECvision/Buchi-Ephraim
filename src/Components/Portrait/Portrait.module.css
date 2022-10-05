@@ -60,7 +60,7 @@
 }
 
 .link>svg {
-  width: 0.8em;
+  width: 1em;
   fill: white;
 }
 
@@ -116,10 +116,16 @@
   font-size: 8.2vw;
   font-weight: 700;
   font-family: 'PT Serif', serif;
+  position: relative;
+}
+
+.nameText:nth-child(2) {
+  margin-bottom: calc(2 * 16px);
 }
 
 .role {
-  align-self: flex-end;
+  position: absolute;
+  right: 0;
   font-size: 2rem;
 }
 
@@ -132,8 +138,9 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  border-right: 1px solid #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
+  border-right: 1px solid #C4C8CC;
+  border-bottom: 1px solid #C4C8CC;
+  margin-bottom: 1em;
 }
 
 .linkIcon svg {
@@ -144,7 +151,7 @@
   max-width: calc(16px * 35);
   font-size: 1.3rem;
   line-height: 2em;
-  color: #FFFFFF;
+  color: #C4C8CC;
 }
 
 @media screen and (min-width: 1520px) {
@@ -174,7 +181,7 @@
   }
 
   .role {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -183,11 +190,14 @@
     flex-direction: column-reverse;
   }
 
+  .LHS {
+    transform: scale(1) !important;
+  }
+
   .LHS img {
     width: 35em;
     max-width: 100%;
-    height: 90vh;
-    height: auto;
+    height: 72vw;
     object-fit: cover;
   }
 
@@ -196,11 +206,13 @@
   }
 
   .name {
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1em;
   }
 
   .nameText {
-    font-size: 17vw;
+    font-size: 20vw;
   }
 
   .description {
@@ -210,15 +222,26 @@
   .socialLink {
     gap: 0.5em;
   }
+
+  .link {
+    background: #2C2F33;
+  }
+
+  .link:nth-child(3) {
+    background: #2C2F33;
+  }
+
+  .link:nth-child(3)>svg {
+    fill: white;
+  }
 }
 
 @media screen and (max-width: 520px) {
-  .role {
-    align-self: center;
-  }
-
-  .LHS {
-    transform: scale(1) !important;
+  .LHS img {
+    width: 35em;
+    max-width: 100%;
+    height: 52vh;
+    object-fit: cover;
   }
 
   .container {
@@ -231,18 +254,6 @@
   }
 
   .description {
-    font-size: 1rem;
-  }
-
-  .socialLink {
-    gap: 0;
-  }
-
-  .link:nth-child(3) {
-    background: transparent;
-  }
-
-  .link:nth-child(3)>svg {
-    fill: white;
+    font-size: 1.2rem;
   }
 }

@@ -34,22 +34,15 @@ export const slide4 = [
 ]
 
 export const handleScroll = (props) => {
-  const { handleSetState, aboutContents, refs, scrollY } = props
+  const { handleSetState, aboutContents, refs } = props
   let container = refs.containerRef.current
-  let slideTop = refs.slideRef.current.getBoundingClientRect().top
   let processTop = refs.processRef.current.getBoundingClientRect().top
   let scrollTop = container.scrollTop
-  let scrollHeight = container.scrollHeight
   let clientHeight = container.clientHeight
-  let scrolled = (scrollTop / scrollHeight) * 100
-  let dir = scrollTop > scrollY ? true : false
 
   handleSetState({
-    scrolled,
     aboutContents: {
       ...aboutContents,
-      dir,
-      slideTop,
       scrollTop,
       processTop,
       clientHeight,

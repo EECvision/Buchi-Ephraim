@@ -13,15 +13,15 @@
   color: #FFFFFF;
 }
 
-.text.hide {
-  animation: slide-out 1250ms forwards;
+.text.slideDown {
+  animation: slide-down 1250ms forwards;
 }
 
-.text.slide {
-  animation: slide-in 1250ms forwards;
+.text.slideUp {
+  animation: slide-up 1250ms forwards;
 }
 
-@keyframes slide-in {
+@keyframes slide-up {
   from {
     transform: translateY(100%) rotate(15deg);
   }
@@ -31,7 +31,7 @@
   }
 }
 
-@keyframes slide-out {
+@keyframes slide-down {
   from {
     transform: translateY(0);
   }

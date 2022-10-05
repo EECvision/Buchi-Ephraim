@@ -1,34 +1,29 @@
+import { useRef } from "react"
 import { useEffect, useState } from "react"
 import classes from "./SlideIn.module.css"
 
-const SlideIn = ({ data, props, offset = 200 }) => {
-  const { top, clientHeight } = props
+const SlideIn = ({ data, props }) => {
+  const containerRef = useRef(null)
   const [hide, setHide] = useState(false)
 
   useEffect(() => {
-    if (!hide) {
-      if (props[top] <= 0 + offset) {
-        setHide(true)
-      }
+    const containerTop = containerRef.current.getBoundingClientRect().top
+    const offset = 200
+    if (containerTop + offset <= window.innerHeight) {
+      setHide(false)
     } else {
-      if (props[top] - clientHeight > 0) {
-        setHide(false)
-      }
+      setHide(true)
     }
-  }, [props, top, hide, clientHeight, offset])
+  }, [props])
 
   return (
-    <div className={classes.container}>
+    <div ref={containerRef} className={classes.container}>
       {data &&
         data.map((text, index) => (
           <div key={index} className={classes.wrapper}>
             <div
               className={`${classes.text} ${
-                props[top] <= 0 + offset
-                  ? classes.slide
-                  : hide
-                  ? classes.hide
-                  : null
+                hide ? classes.slideDown : classes.slideUp
               }`}
             >
               {text}

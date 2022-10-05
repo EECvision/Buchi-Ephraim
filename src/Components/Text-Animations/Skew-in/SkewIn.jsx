@@ -1,27 +1,26 @@
+import { useRef } from "react"
 import { useEffect, useState } from "react"
 import classes from "./SkewIn.module.css"
 
-const SkewIn = ({ children, offset = 200, props }) => {
-  const { top, clientHeight } = props
+const SkewIn = ({ children, props }) => {
+  const containerRef = useRef(null)
   const [hide, setHide] = useState(false)
 
   useEffect(() => {
-    if (!hide) {
-      if (props[top] <= 0 + offset) {
-        setHide(true)
-      }
+    const containerTop = containerRef.current.getBoundingClientRect().top
+    const offset = 200
+    if (containerTop + offset <= window.innerHeight) {
+      setHide(false)
     } else {
-      if (props[top] - clientHeight > 0) {
-        setHide(false)
-      }
+      setHide(true)
     }
-  }, [props, top, hide, clientHeight, offset])
+  }, [props])
 
   return (
-    <div className={classes.container}>
+    <div ref={containerRef} className={classes.container}>
       <div
         className={`${classes.text} ${
-          props[top] <= 0 + offset ? classes.slide : hide ? classes.hide : null
+          hide ? classes.slideDown : classes.slideUp
         }`}
       >
         {children}

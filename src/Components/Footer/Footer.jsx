@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={classes.fTop}>
         <div className={classes.fLeft}>
           <div className={classes.fLeftHeading}>Let's work together</div>
-          <div>
+          <div className={classes.idea}>
             Got a project idea on your mind? Or perhaps you need a devoted
             product designer for your team? I’m one email away from building
             with you.
@@ -55,7 +55,13 @@ const Footer = () => {
         <div className={classes.code}>
           <Heart />
           <span>code by</span>
-          <span className={classes.devName}>Emmanuel Ezeka</span>
+          <a
+            href="https://github.com/EECvision"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className={classes.devName}>Emmanuel Ezeka</span>
+          </a>
         </div>
       </div>
     </footer>

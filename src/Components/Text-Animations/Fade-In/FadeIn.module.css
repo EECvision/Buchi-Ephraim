@@ -4,8 +4,8 @@
 }
 
 .text {
-  font-size: 1rem;
-  line-height: 2em;
+  font-size: 1.2rem;
+  line-height: 2.4em;
   transform: translateY(100%);
   color: #FFFFFF;
 }
@@ -14,15 +14,15 @@
   transform: translateY(0);
 }
 
-.text.hide {
-  animation: slide-out 1850ms forwards;
+.text.slideDown {
+  animation: slide-down 1850ms forwards;
 }
 
-.text.slide {
-  animation: slide-in 1850ms forwards;
+.text.slideUp {
+  animation: slide-up 1850ms forwards;
 }
 
-@keyframes slide-in {
+@keyframes slide-up {
   from {
     opacity: 0;
     transform: translateY(100%);
@@ -34,7 +34,7 @@
   }
 }
 
-@keyframes slide-out {
+@keyframes slide-down {
   from {
     transform: translateY(0);
   }

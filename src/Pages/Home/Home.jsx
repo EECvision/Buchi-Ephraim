@@ -15,12 +15,15 @@ const Home = ({ animate }) => {
   const overlayRef = useRef(null)
   const containerRef = useRef(null)
   const [state, setState] = useState({
-    start: 0,
+    startX: 0,
+    startY: 0,
+    endY: 0,
+    endX: 0,
     move: false,
     end: false,
     hold: false,
   })
-  const { hold, start, move, end } = state
+  const { hold, startX, startY, endY, endX, move, end } = state
   const { dispatch, outsideDisplay, inview } = useContext(AppContext)
 
   const handleSetState = (payload) => {
@@ -48,13 +51,15 @@ const Home = ({ animate }) => {
     const windowWidth = window.innerWidth
     const numId = mapIdToDisplayOut[inview]
     const len = Object.keys(data).length
-    if (move && start) {
-      if (start <= 72 && numId > 1) {
+    if (!endY || !endX) return
+    if (Math.abs(startY - endY) > 30 || Math.abs(startX - endX) < 30) return
+    if (move && startX) {
+      if (startX <= 120 && numId > 1) {
         dispatch(setInview(mapProjectToId[numId - 1]))
-      } else if (start >= windowWidth - 72 && numId < len) {
+      } else if (startX >= windowWidth - 120 && numId < len) {
         dispatch(setInview(mapProjectToId[numId + 1]))
       }
-      handleSetState({ start: 0, move: false, end: false })
+      handleSetState({ startX: 0, move: false, end: false })
     }
   }, [end])
 
@@ -62,16 +67,22 @@ const Home = ({ animate }) => {
     // touch event for mobile
     containerRef.current.addEventListener("touchstart", (e) => {
       let event = e.changedTouches ? e.changedTouches[0] : e
-      let x = event.clientX
-      handleSetState({ start: x })
+      handleSetState({
+        startX: event.clientX,
+        startY: event.clientY,
+        endY: 0,
+        endX: 0,
+      })
     })
 
     containerRef.current.addEventListener("touchmove", () => {
       handleSetState({ move: true, end: false })
     })
 
-    containerRef.current.addEventListener("touchend", () => {
+    containerRef.current.addEventListener("touchend", (e) => {
       handleSetState({ end: true })
+      let event = e.changedTouches ? e.changedTouches[0] : e
+      handleSetState({ endX: event.clientX, endY: event.clientY })
     })
   }, [])
 

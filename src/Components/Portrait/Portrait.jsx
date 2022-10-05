@@ -69,8 +69,9 @@ const Portrait = ({ props }) => {
       <div ref={RHSRef} className={classes.RHS}>
         <div className={classes.name}>
           <div className={classes.nameText}>Buchi</div>
-          <div className={classes.nameText}>Ephraim</div>
-          <div className={classes.role}>Product designer</div>
+          <div className={classes.nameText}>
+            Ephraim <div className={classes.role}>Product designer</div>
+          </div>
         </div>
         <div className={classes.description}>
           <div className={classes.linkIcon}>

@@ -59,9 +59,6 @@ const About = () => {
 
   return (
     <div
-      onMouseOver={() =>
-        handleSetState({ scrollY: containerRef.current.scrollTop })
-      }
       onScroll={() => handleScroll(props)}
       ref={containerRef}
       className={`${classes.container} ${
@@ -74,7 +71,7 @@ const About = () => {
         <section className={classes.nav}>
           <div onClick={handleBack} className={classes.backBtn}>
             <LeftArrow className={classes.leftIcon} />
-            <div>Back</div>
+            <div className={classes.backText}>Back</div>
           </div>
           <div className={classes.accentContainer}>
             <div className={classes.accent}>
@@ -92,86 +89,49 @@ const About = () => {
         </section>
         <section ref={slideRef} className={classes.content}>
           <div className={classes.contentWrapper}>
-            <SkewIn offset={500} props={{ ...aboutContents, top: "slideTop" }}>
-              About me
-            </SkewIn>
+            <SkewIn props={{ ...aboutContents }}>About me</SkewIn>
             <div className={classes.textWrapper}>
-              <SlideIn
-                data={slide1}
-                offset={500}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-              <SlideIn
-                data={slide2}
-                offset={100}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
+              <SlideIn data={slide1} props={{ ...aboutContents }} />
+              <SlideIn data={slide2} props={{ ...aboutContents }} />
             </div>
           </div>
           <div className={classes.contentWrapper_mobile}>
-            <SkewIn offset={600} props={{ ...aboutContents, top: "slideTop" }}>
+            <SkewIn offset={600} props={{ ...aboutContents }}>
               About me
             </SkewIn>
             <div className={classes.textWrapper}>
-              <FadeIn
-                data={slide1}
-                offset={400}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-              <FadeIn
-                data={slide2}
-                offset={200}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
+              <FadeIn data={slide1} props={{ ...aboutContents }} />
+              <FadeIn data={slide2} props={{ ...aboutContents }} />
             </div>
           </div>
         </section>
         <section ref={fadeRef} className={classes.content}>
           <div className={classes.contentWrapper}>
-            <SkewIn offset={-200} props={{ ...aboutContents, top: "slideTop" }}>
+            <SkewIn props={{ ...aboutContents }}>
               What I can <br />
               do for you{" "}
             </SkewIn>
             <div className={classes.textWrapper}>
-              <SlideIn
-                data={slide3}
-                offset={-200}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-              <SlideIn
-                data={slide4}
-                offset={-600}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
+              <SlideIn data={slide3} props={{ ...aboutContents }} />
+              <SlideIn data={slide4} props={{ ...aboutContents }} />
             </div>
           </div>
           <div className={classes.contentWrapper_mobile}>
-            <SkewIn offset={0} props={{ ...aboutContents, top: "slideTop" }}>
+            <SkewIn props={{ ...aboutContents }}>
               What I can <br />
               do for you{" "}
             </SkewIn>
             <div className={classes.textWrapper}>
-              <FadeIn
-                data={slide3}
-                offset={-200}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
-              <FadeIn
-                data={slide4}
-                offset={-400}
-                props={{ ...aboutContents, top: "slideTop" }}
-              />
+              <FadeIn data={slide3} props={{ ...aboutContents }} />
+              <FadeIn data={slide4} props={{ ...aboutContents }} />
             </div>
           </div>
         </section>
-        {/* <section className={classes.reviews}>
-          <Reviews
-            offset={-1200}
-            props={{ ...aboutContents, top: "slideTop" }}
-          />
-        </section> */}
         <section ref={processRef} className={classes.myProcess}>
           <MyProcess props={aboutContents} />
+        </section>
+        <section className={classes.reviews}>
+          <Reviews props={{ ...aboutContents }} />
         </section>
         <section className={classes.greeting}>
           <div className={classes.title}>THANKS FOR READING</div>
