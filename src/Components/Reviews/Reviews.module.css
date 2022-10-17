@@ -9,12 +9,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 4em;
+  gap: 8em;
 }
 
 .title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: 'PT Serif', serif;
   color: #FFFFFF;
   margin-bottom: 2em;
@@ -32,7 +32,7 @@
   width: 100%;
   max-width: calc(45% - 2em);
   background: transparent;
-  transition: all 1250ms;
+  transition: all 850ms;
   color: #FFFFFF;
 }
 
@@ -67,22 +67,22 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    margin-bottom: 4em;
-  }
-
   .content {
     max-width: calc(100% - 4em);
   }
 }
 
 @media screen and (max-width: 520px) {
+  .wrapper {
+    gap: 6em;
+  }
+
   .container {
-    margin-bottom: 2em;
+    margin-bottom: 6em;
   }
 
   .content {
-    transition: all 1850ms;
+    transition: all 1250ms;
   }
 
   .review {
@@ -100,6 +100,6 @@
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }

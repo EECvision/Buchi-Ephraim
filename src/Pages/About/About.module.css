@@ -12,11 +12,11 @@
 }
 
 .container.slideIn {
-  animation: slidein 1250ms forwards;
+  animation: slidein 850ms forwards;
 }
 
 .container.slideOut {
-  animation: slideout 1250ms forwards;
+  animation: slideout 850ms forwards;
 }
 
 @keyframes slidein {

@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className={classes.name}>Buchi Ephraim</div>
         </Link>
         <div onClick={handleAboutPage} className={classes.link}>
-          About
+          About me
         </div>
       </div>
     </div>

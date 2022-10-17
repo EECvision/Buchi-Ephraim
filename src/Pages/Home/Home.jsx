@@ -30,16 +30,16 @@ const Home = ({ animate }) => {
     setState((state) => ({ ...state, ...payload }))
   }
 
-  const handleReset = () => {
-    handleSetState({ hold: true })
-    timerId.current = setTimeout(() => {
-      handleSetState({ hold: false })
-    }, 1850)
+  const handleView = (id) => {
+    dispatch(setInview(id))
   }
 
-  useEffect(() => {
-    handleReset()
-  }, [inview])
+  // useEffect(() => {
+  //   handleSetState({ hold: true })
+  //   timerId.current = setTimeout(() => {
+  //     handleSetState({ hold: false })
+  //   }, 0)
+  // }, [inview])
 
   useEffect(() => {
     if (animate) {
@@ -54,9 +54,9 @@ const Home = ({ animate }) => {
     if (!endY || !endX) return
     if (Math.abs(startY - endY) > 30 || Math.abs(startX - endX) < 30) return
     if (move && startX) {
-      if (startX <= 120 && numId > 1) {
+      if (startX <= 150 && numId > 1) {
         dispatch(setInview(mapProjectToId[numId - 1]))
-      } else if (startX >= windowWidth - 120 && numId < len) {
+      } else if (startX >= windowWidth - 150 && numId < len) {
         dispatch(setInview(mapProjectToId[numId + 1]))
       }
       handleSetState({ startX: 0, move: false, end: false })
@@ -103,6 +103,7 @@ const Home = ({ animate }) => {
         <div className={classes.mobileIndicator}>
           {Object.values(data).map((project, index) => (
             <div
+              onClick={() => handleView(project.id)}
               key={index}
               style={{
                 background:

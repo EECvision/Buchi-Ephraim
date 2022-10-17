@@ -10,8 +10,8 @@
 
 .card {
   flex: 0 0 auto;
-  width: 10em;
-  height: 24em;
+  width: calc(10 * 16px);
+  height: calc(24 * 16px);
   cursor: pointer;
   position: relative;
   transition: width 1250ms;
@@ -34,7 +34,7 @@
 }
 
 .card.active {
-  width: 58em;
+  width: calc(58 * 16px);
 }
 
 .backBtn {

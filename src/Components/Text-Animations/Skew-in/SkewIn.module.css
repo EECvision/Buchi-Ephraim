@@ -4,7 +4,7 @@
 }
 
 .text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 2em;
   transform: translateY(100%) rotate(15deg);
   transform-origin: top left;
@@ -14,11 +14,11 @@
 }
 
 .text.slideDown {
-  animation: slide-down 1250ms forwards;
+  animation: slide-down 850ms forwards;
 }
 
 .text.slideUp {
-  animation: slide-up 1250ms forwards;
+  animation: slide-up 850ms forwards;
 }
 
 @keyframes slide-up {

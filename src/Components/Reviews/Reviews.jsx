@@ -1,8 +1,7 @@
 import React, { useEffect } from "react"
 import classes from "./Reviews.module.css"
 import { REVIEWS } from "./Reviews.script"
-import { ReactComponent as QuoteUp } from "../../assets/quote-up.svg"
-import { ReactComponent as QuoteDown } from "../../assets/quote-down.svg"
+import ReviewCard from "./ReviewCard"
 
 const Reviews = ({ props }) => {
   useEffect(() => {
@@ -35,16 +34,7 @@ const Reviews = ({ props }) => {
       </div>
       <div className={classes.wrapper}>
         {REVIEWS.map(({ review, reviewer }, idx) => (
-          <div key={idx} className={`${classes.reviewContainer} review-card`}>
-            <div className={classes.content}>
-              <div className={classes.review}>
-                <QuoteUp className={classes.quoteUp} />
-                {review}
-                <QuoteDown className={classes.quoteDown} />
-              </div>
-              <div className={classes.reviewer}>{reviewer}</div>
-            </div>
-          </div>
+          <ReviewCard key={idx} review={review} reviewer={reviewer} />
         ))}
       </div>
     </div>
