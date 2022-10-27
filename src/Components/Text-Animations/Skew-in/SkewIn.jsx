@@ -8,7 +8,7 @@ const SkewIn = ({ children, props }) => {
 
   useEffect(() => {
     const containerTop = containerRef.current.getBoundingClientRect().top
-    const offset = 200
+    const offset = 50
     if (containerTop + offset <= window.innerHeight) {
       setHide(false)
     } else {
