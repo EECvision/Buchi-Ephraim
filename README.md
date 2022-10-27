@@ -1,6 +1,37 @@
-# Buchi-Ephraim Portfolio website
+## Buchi-Ephraim
+
+## A portfolio website built for a ui/ux designer
 
 ---
+
+## Table of contents
+
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+
+## Overview
+
+### Screenshot
+
+![](./src/assets/home-page.PNG)
+
+### Links
+
+- Live Site URL: [Buchi-Ephraim](https://buchi-ephraim.vercel.app/)
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+- Javascript
+- HTML
+- CSS
+- Flexbox
+- Mobile-first workflow
 
 # Getting Started with Create React App
 
