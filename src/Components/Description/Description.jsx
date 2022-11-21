@@ -5,12 +5,23 @@ import { ReactComponent as LinkIcon } from "../../assets/casestudy-icon.svg"
 import { ReactComponent as LinkIconRound } from "../../assets/link-icon-round.svg"
 import data from "../../state/app.data"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import { useEffect } from "react"
 
 const Description = ({ hold }) => {
   const { inview } = useContext(AppContext)
 
+  const [animate, setAnimate] = useState("")
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimate("")
+    }, 1250)
+    setAnimate(inview)
+  }, [inview])
+
   return (
-    <section className={`${classes.about} ${hold && classes.reset}`}>
+    <section className={`${classes.about} ${animate && classes.reset}`}>
       <div className={classes.titleAndLink}>
         <div
           style={{ color: data[inview].mainColor }}

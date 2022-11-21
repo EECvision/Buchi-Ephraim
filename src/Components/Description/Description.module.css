@@ -113,7 +113,7 @@
   }
 
   .about.reset {
-    animation: enter 1850ms forwards;
+    /* animation: enter 1850ms forwards; */
   }
 
   @keyframes enter {

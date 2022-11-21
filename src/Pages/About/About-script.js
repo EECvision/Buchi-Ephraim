@@ -3,34 +3,34 @@ export const slide1 = [
   " passionate about creating seamless",
   " user exeperience.",
   " As a UX generalist, I love being actively",
-  "involved in various stages of",
-  "product delivery.",
+  " involved in various stages of",
+  " product delivery.",
 ]
 
 export const slide2 = [
   "At work I ask lots of question to help me",
-  "understand the problem we are",
-  "trying to solve.",
-  "understanding the problem informs my",
-  "research approach which in turn helps me",
-  "create intuitive designs that adds",
+  " understand the problem we are",
+  " trying to solve.",
+  " understanding the problem informs my",
+  " research approach which in turn helps me",
+  " create intuitive designs that adds",
   " value to users.",
 ]
 
 export const slide3 = [
   "Whether your goal is to generate leads,",
-  "start selling, improve your ecommerce,",
-  "build a converting blockchain website",
-  "or have your own space in the digital world,",
-  "connecting with the users’ emotions is key.",
+  " start selling, improve your ecommerce,",
+  " build a converting blockchain website",
+  " or have your own space in the digital world,",
+  " connecting with the users’ emotions is key.",
 ]
 
 export const slide4 = [
   "That's why I create digital designs that",
-  "helps create the connections between your",
-  "business and customers by combining research,",
-  "designs and creative ideas into a",
-  "beautiful and usable products.",
+  " helps create the connections between your",
+  " business and customers by combining research,",
+  " designs and creative ideas into a",
+  " beautiful and usable products.",
 ]
 
 export const handleScroll = (props) => {
