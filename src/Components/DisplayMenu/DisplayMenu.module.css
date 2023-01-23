@@ -14,7 +14,7 @@
   height: calc(24 * 16px);
   cursor: pointer;
   position: relative;
-  transition: width 1250ms;
+  transition: width 850ms;
   border: 1px solid #DCE0E3;
   filter: drop-shadow(26px 18px 18px rgba(93, 134, 194, 0.1));
   border-radius: 4px;
